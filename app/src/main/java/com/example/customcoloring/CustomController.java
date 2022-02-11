@@ -19,6 +19,7 @@ import androidx.annotation.RequiresApi;
  * specific in-game actions from interacting with surfaceview & seekbar.
  *
  * @author Milton Nguy
+ * @version 10 February 2022
  *
  */
 
@@ -65,23 +66,25 @@ public class CustomController implements SeekBar.OnSeekBarChangeListener, View.O
     public void onProgressChanged(SeekBar seekBar, int i, boolean b) {
         //scans the seekbar and checks the id to see if it matches with specific colors
         //value of colors are found on lines 115-118
-        if (seekBar.getId() == R.id.redSB) {
-            redTV.setText("red: " + i);
-            red = i;
-            element1.setColor(Color.argb(alpha,red,green,blue));
-        } //set color variables to i so that it won't automatically revert to original value
-        if (seekBar.getId() == R.id.greenSB) {
-            greenTV.setText("green: " + i);
-            green = i;
-            element1.setColor(Color.argb(alpha,red,green,blue));
-        }
-        if (seekBar.getId() == R.id.blueSB) {
-            blueTV.setText("blue: " + i);
-            blue = i;
-            element1.setColor(Color.argb(alpha,red,green,blue));
-        }
+        //Also, it makes sure that if you haven't selected an element, the app won't crash.
+        if (element1 != null) {
+            if (seekBar.getId() == R.id.redSB) {
+                redTV.setText("red: " + i);
+                red = i;
+                element1.setColor(Color.argb(alpha, red, green, blue));
+            } //set color variables to i so that it won't automatically revert to original value
+            if (seekBar.getId() == R.id.greenSB) {
+                greenTV.setText("green: " + i);
+                green = i;
+                element1.setColor(Color.argb(alpha, red, green, blue));
+            }
+            if (seekBar.getId() == R.id.blueSB) {
+                blueTV.setText("blue: " + i);
+                blue = i;
+                element1.setColor(Color.argb(alpha, red, green, blue));
+            }
 
-
+        }
 
         //invalidate() method updates canvas
         bob.invalidate();

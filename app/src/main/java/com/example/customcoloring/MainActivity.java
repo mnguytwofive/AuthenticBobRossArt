@@ -6,6 +6,16 @@ import android.os.Bundle;
 import android.widget.SeekBar;
 import android.widget.TextView;
 
+/**
+ * class MainActivity
+ *
+ * A class that creates objects of android game controllers and custom objects
+ * to create game interactions.
+ *
+ * @author Milton Nguy
+ * @version 10 February 2022
+ */
+
 public class MainActivity extends AppCompatActivity {
 
     @Override

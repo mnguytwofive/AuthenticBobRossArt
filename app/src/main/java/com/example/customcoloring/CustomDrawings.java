@@ -17,6 +17,7 @@ import java.util.ArrayList;
  * This is a class to draw objects into canvas
  *
  * @author Milton Nguy
+ * @version 10 February 2022
  */
 
 public class CustomDrawings extends SurfaceView {
